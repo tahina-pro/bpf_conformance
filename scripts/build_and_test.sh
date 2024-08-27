@@ -1,7 +1,12 @@
 #!/usr/bin/env bash
 
+# This script must be run as root
+
 set -e
 set -x
+
+apt-get update && \
+    apt-get install -y libboost-dev libboost-filesystem-dev libboost-program-options-dev libelf-dev lcov cmake git pkg-config g++ sudo
 
 SCRIPT_DIR="$(dirname "$(readlink -f "$0")")"
 cd "$SCRIPT_DIR"/..
